@@ -24,19 +24,19 @@
 }
 
 .grid {
-    position: relative; /* Ensure positioning context for absolute positioning */
+    position: relative; 
 }
 
 .cell1{
     margin-top: 300px;
-    position: relative; /* Ensure positioning context for z-index */
-    z-index: 1; /* Set z-index higher than the background */
+    position: relative; 
+    z-index: 1; 
 }
 
 .cell2{
     margin-top: 0x;
-    position: relative; /* Ensure positioning context for z-index */
-    z-index: 1; /* Set z-index higher than the background */
+    position: relative; 
+    z-index: 1; 
 }
 
 .web3title{
@@ -94,13 +94,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .grid2 {
     display: grid;
-    grid-template-columns: 20% 3% 25%  3% 25% 3% 20%;
-    grid-template-rows: 20% 20% 3% 25% 3% 30%;
+    grid-template-columns: 20% 3% 20% 20% 20% 1% 20%;
+    grid-template-rows: 40% 40% 3% 40% 3% 40%;
 }
 
 .div1 {
@@ -121,7 +120,7 @@
 }
 
 .div2{
-    grid-row: 1 / 6;  
+    grid-row: 1 / 6;
 }
 
 .div3{
@@ -160,10 +159,12 @@
 }
 
 .div7{
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row: 6 / 6;
     border: 1px solid grey;
     border-radius: 5%;
+    background-color: yellow;
 }
 
 .div8{
@@ -223,4 +224,92 @@
 
 .video-text p {
     color: #777;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+   .mike{
+    font-weight: 400;
+    margin: 2rem 0 0.25rem 0;
+  }
+  
+  .mike{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    opacity: 0.5;
+    margin: 0;
+  }
+  
+  .course{
+    margin: 0;
+  }
+  
+  .mike{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  
+  figure {
+    width: 450px;
+    aspect-ratio: 8 / 5;
+    --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+    --accent: #00FFFF;
+    transition: background 0.2s;
+    background:
+      radial-gradient(circle at top left, var(--accent), transparent 75%),
+      var(--bg);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+  
+  figure:after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 10%;
+    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+    filter: blur(25px);
+    transform:
+      translateX(calc(var(--hover) * 15%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  img {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 40%;
+    transform:
+      translateX(calc(var(--hover) * -15%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s;
+  }
+  
+  article {
+    --hover: 0;
+  }
+  
+  article:hover {
+    --hover: 1;
+  }
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.feature {
+    flex: 1;
+    margin: 0 5px; /* Adjust the gap between features */
 }
